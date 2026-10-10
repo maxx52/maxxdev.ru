@@ -17,12 +17,6 @@ defineProps({ controller: { type: Object, required: true } });
           начать обсуждение.
         </p>
         <a
-          :href="profile.github"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="github-contact"
-          >{{ profile.githubLabel }} <span aria-hidden="true">↗</span></a
-        ><a
           v-if="profile.email"
           :href="`mailto:${profile.email}`"
           class="github-contact"
