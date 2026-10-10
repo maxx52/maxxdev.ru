@@ -1,6 +1,7 @@
 <script setup>
 import { computed, nextTick, onMounted, onUnmounted, ref } from 'vue'
 import { profile, projects, services } from './content.js'
+import { postContact } from './contact.js'
 
 const menuOpen = ref(false)
 const category = ref('Все')
@@ -18,15 +19,9 @@ let frame = 0
 let removeKeyListener
 let lockRestore = ''
 
-const brief = computed(() => [
-  'Заявка на разработку', '',
-  `Имя: ${draft.value.name.trim()}`,
-  `Контакт: ${draft.value.contact.trim()}`,
-  `Тип проекта: ${draft.value.platform}`,
-  '', 'Задача:', draft.value.goal.trim(),
-].join('\n'))
-
-const mailLink = computed(() => `mailto:${profile.email}?subject=${encodeURIComponent('Заявка на разработку — ' + draft.value.platform)}&body=${encodeURIComponent(brief.value)}`)
+const isSending = ref(false)
+const website = ref('')
+let pendingRequest = null
 
 function closeMenu() { menuOpen.value = false }
 
@@ -77,32 +72,24 @@ function validBrief() {
   return true
 }
 
-function downloadBrief() {
-  if (!validBrief()) return
-  const file = new Blob(['\ufeff' + brief.value], { type: 'text/plain;charset=utf-8' })
-  const url = URL.createObjectURL(file)
-  const anchor = document.createElement('a')
-  anchor.href = url
-  anchor.download = 'project-brief.txt'
-  document.body.appendChild(anchor)
-  anchor.click()
-  anchor.remove()
-  setTimeout(() => URL.revokeObjectURL(url), 1000)
-  contactFeedback.value = 'Бриф скачан. Его можно отправить удобным способом. Данные из формы никуда не отправлены.'
-}
-
-async function copyBrief() {
-  if (!validBrief()) return
-  try {
-    await navigator.clipboard.writeText(brief.value)
-    contactFeedback.value = 'Бриф скопирован. Его можно вставить в сообщение.'
-  } catch {
-    contactFeedback.value = 'Копирование недоступно в этом браузере. Скачайте бриф в виде файла.'
+async function submitBrief() {
+  if (isSending.value || !validBrief()) return
+  const payload = Object.fromEntries(Object.entries(draft.value).map(([key, value]) => [key, value.trim()]))
+  const fingerprint = JSON.stringify(payload)
+  if (!pendingRequest || pendingRequest.fingerprint !== fingerprint) {
+    pendingRequest = { fingerprint, requestId: crypto.randomUUID() }
   }
-}
-
-function openEmail() {
-  if (validBrief()) window.location.href = mailLink.value
+  isSending.value = true
+  contactFeedback.value = ''
+  try {
+    const result = await postContact({ ...payload, requestId: pendingRequest.requestId, website: website.value })
+    draft.value = { name: '', contact: '', platform: 'Сайт', goal: '' }
+    try { localStorage.removeItem('maxim-impulse-brief') } catch { /* Storage is optional. */ }
+    pendingRequest = null
+    contactFeedback.value = result.message
+  } catch (error) {
+    contactFeedback.value = error.message
+  } finally { isSending.value = false }
 }
 
 onMounted(() => {
@@ -203,13 +190,16 @@ onUnmounted(() => {
 
     <section id="contact" class="contact-section" data-reveal>
       <div class="container contact-layout"><div class="contact-copy"><p class="eyebrow">НАЧНЁМ С РАЗГОВОРА</p><h2>Есть идея?<br><span>Давайте<br>создадим.</span></h2><p>Расскажите, что хотите сделать.<br>Краткого описания достаточно,<br>чтобы начать обсуждение.</p><a :href="profile.github" target="_blank" rel="noopener noreferrer" class="github-contact">{{ profile.githubLabel }} <span aria-hidden="true">↗</span></a><a v-if="profile.email" :href="`mailto:${profile.email}`" class="github-contact">{{ profile.email }} ↗</a></div>
-        <form id="brief-form" class="brief-form" @submit.prevent="downloadBrief" @input="persistDraft">
+        <form id="brief-form" class="brief-form" @submit.prevent="submitBrief" :aria-busy="isSending" @input="persistDraft">
           <div class="form-heading"><h3>Короткий бриф</h3><span aria-hidden="true">↗</span></div>
+          <fieldset class="brief-fields" :disabled="isSending"><legend class="sr-only">Данные заявки</legend>
+          <label class="form-trap" aria-hidden="true">Ваш сайт<input v-model="website" name="website" tabindex="-1" autocomplete="off"></label>
           <div class="form-row"><label>Как вас зовут<input v-model="draft.name" name="name" autocomplete="name" placeholder="Ваше имя" required maxlength="200"></label><label>Как с вами связаться<input v-model="draft.contact" name="contact" autocomplete="email" placeholder="Email, Telegram или телефон" required maxlength="200"></label></div>
           <label>Что нужно разработать<select v-model="draft.platform" name="platform" @change="persistDraft"><option>Сайт</option><option>Android-приложение</option><option>Программа для компьютера</option><option>Пока не определился</option></select></label>
           <label>Расскажите о задаче<textarea v-model="draft.goal" name="goal" rows="4" placeholder="Для кого продукт, какие задачи он должен решать, желаемые сроки…" required maxlength="4000"></textarea></label>
-          <div class="form-actions"><button v-if="profile.email" type="button" class="button button-primary" @click="openEmail">Открыть в почте ↗</button><button v-else type="submit" class="button button-primary">Скачать бриф <span aria-hidden="true">↓</span></button><button type="button" class="copy-button" @click="copyBrief">Скопировать</button></div>
-          <p class="form-note">{{ profile.email ? 'Откроется ваше почтовое приложение с подготовленным текстом. Отправку нужно подтвердить в нём.' : 'Бриф можно скачать или скопировать и отправить удобным способом. Форма не отправляет данные.' }}</p>
+          </fieldset>
+          <div class="form-actions"><button type="submit" class="button button-primary" :disabled="isSending">{{ isSending ? 'Отправляем…' : 'Отправить заявку ↗' }}</button></div>
+          <p class="form-note">Оставьте удобный способ связи — я отвечу по указанному контакту.</p>
           <p v-if="contactFeedback" class="form-feedback" role="status">{{ contactFeedback }}</p>
         </form>
       </div>
