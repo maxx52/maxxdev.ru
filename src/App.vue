@@ -1,6 +1,6 @@
 <script setup>
 import { computed, nextTick, onMounted, onUnmounted, ref } from 'vue'
-import { profile, projects, services } from './content.js'
+import { profile, projects, services, pricing } from './content.js'
 import { postContact } from './contact.js'
 
 const menuOpen = ref(false)
@@ -134,11 +134,11 @@ onUnmounted(() => {
   <header class="site-header">
     <div class="container header-inner">
       <a href="#top" class="brand" aria-label="MaxxDev — на главную" @click="closeMenu">maxx<span>dev</span><i aria-hidden="true"></i></a>
-      <nav class="desktop-nav" aria-label="Основная навигация"><a href="#projects">Проекты</a><a href="#services">Услуги</a><a href="#about">О разработчике</a></nav>
+      <nav class="desktop-nav" aria-label="Основная навигация"><a href="#projects">Проекты</a><a href="#services">Услуги</a><a href="#pricing">Стоимость</a><a href="#about">О разработчике</a></nav>
       <a class="button button-outline header-cta" href="#contact">Обсудить проект <span aria-hidden="true">↗</span></a>
       <button class="menu-button" :aria-expanded="menuOpen" aria-controls="mobile-nav" @click="menuOpen = !menuOpen">{{ menuOpen ? 'Закрыть' : 'Меню' }} <span aria-hidden="true">{{ menuOpen ? '×' : '+' }}</span></button>
     </div>
-    <nav v-if="menuOpen" id="mobile-nav" class="mobile-nav container" aria-label="Мобильная навигация"><a href="#projects" @click="closeMenu">Проекты</a><a href="#services" @click="closeMenu">Услуги</a><a href="#about" @click="closeMenu">О разработчике</a><a href="#contact" @click="closeMenu">Обсудить проект ↗</a></nav>
+    <nav v-if="menuOpen" id="mobile-nav" class="mobile-nav container" aria-label="Мобильная навигация"><a href="#projects" @click="closeMenu">Проекты</a><a href="#services" @click="closeMenu">Услуги</a><a href="#pricing" @click="closeMenu">Стоимость</a><a href="#about" @click="closeMenu">О разработчике</a><a href="#contact" @click="closeMenu">Обсудить проект ↗</a></nav>
   </header>
 
   <main id="main">
@@ -175,6 +175,21 @@ onUnmounted(() => {
         <div class="section-heading"><div><p class="eyebrow">ЧЕМ МОГУ ПОМОЧЬ</p><h2>Технологии —<br>под <span>вашу задачу.</span></h2></div><p class="section-intro">Не знаете, с чего начать?<br>Сначала разберём задачу и выберем решение.</p></div>
         <div class="services-grid"><article v-for="service in services" :key="service.number" class="service-card"><div class="service-top"><span>{{ service.number }}</span><span aria-hidden="true">↗</span></div><p class="eyebrow">{{ service.label }}</p><h3>{{ service.title }}</h3><p class="service-description">{{ service.description }}</p><ul class="tech-list"><li v-for="item in service.items" :key="item">{{ item }}</li></ul><a :href="`#contact`" class="service-link" @click="draft.platform = service.number === '01' ? 'Сайт' : service.number === '02' ? 'Android-приложение' : 'Программа для компьютера'; persistDraft()">Обсудить разработку <span aria-hidden="true">↗</span></a></article></div>
       </div>
+    </section>
+
+    <section id="pricing" class="section pricing-section container" data-reveal>
+      <div class="section-heading"><div><p class="eyebrow">СТАРТОВЫЕ ЦЕНЫ</p><h2>Понятный бюджет.<br><span>До начала работы.</span></h2></div><p class="section-intro">Выберите ориентир под свою задачу.<br>Точную стоимость согласуем после обсуждения.</p></div>
+      <div class="pricing-grid">
+        <article v-for="offer in pricing" :key="offer.id" class="pricing-card">
+          <div class="service-top"><span>{{ offer.number }}</span><span aria-hidden="true">↗</span></div>
+          <h3>{{ offer.title }}</h3>
+          <p class="pricing-start"><span>от</span> {{ offer.startingPrice }} <span>₽</span></p>
+          <p class="pricing-description">{{ offer.description }}</p>
+          <dl class="pricing-list"><div v-for="item in offer.items" :key="item.title"><dt>{{ item.title }}</dt><dd>от {{ item.price }} ₽</dd></div></dl>
+          <a href="#contact" class="button button-outline" @click="draft.platform = offer.platform; persistDraft()">Обсудить проект <span aria-hidden="true">↗</span></a>
+        </article>
+      </div>
+      <div class="pricing-policy"><p>Это стартовые цены. Итоговая стоимость зависит от количества страниц или экранов, сложности дизайна, функций и интеграций. Объём работ, стоимость и сроки согласуем до начала разработки.</p><p>Домены, хостинг и платные сторонние сервисы оплачиваются отдельно, если нужны для проекта.</p><p>Программы для компьютера — индивидуальный расчёт. <a href="#contact" @click="draft.platform = 'Программа для компьютера'; persistDraft()">Обсудить задачу ↗</a></p></div>
     </section>
 
     <section id="about" class="section about container" data-reveal>

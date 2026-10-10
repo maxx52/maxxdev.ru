@@ -1,4 +1,4 @@
-// Add a public business email to enable the "Open in email" action.
+// Optional public business email for the contact link.
 // Keep passwords, SMTP credentials and other secrets out of frontend code.
 export const profile = {
   name: 'Максим',
@@ -38,4 +38,30 @@ export const services = [
   {number: '01', title: 'Веб-сайты', label: 'ВАШ БИЗНЕС В ИНТЕРНЕТЕ', description: 'Лендинги, корпоративные сайты и веб-сервисы. Адаптивный интерфейс и понятный путь к целевому действию.', items: ['Vue.js', 'Адаптивная верстка', 'Интерактивные интерфейсы']},
   {number: '02', title: 'Android', label: 'ИДЕЯ В ВАШЕМ КАРМАНЕ', description: 'Приложения для повседневных задач и бизнеса. От структуры экранов до готового приложения.', items: ['Kotlin', 'Jetpack Compose', 'Работа с данными']},
   {number: '03', title: 'Desktop', label: 'ИНСТРУМЕНТЫ ДЛЯ РАБОТЫ', description: 'Программы для компьютера: автоматизация процессов, управление контентом и специализированные инструменты.', items: ['Compose Desktop', 'Windows', 'Индивидуальная логика']},
+]
+
+
+export const pricing = [
+  {
+    id: 'web', number: '01', title: 'Сайты', platform: 'Сайт', startingPrice: '15 000',
+    description: 'От страницы для одной услуги до сайта компании с каталогом.',
+    items: [
+      { title: 'Лендинг', price: '15 000' },
+      { title: 'Сайт-визитка', price: '20 000' },
+      { title: 'Многостраничный сайт', price: '30 000' },
+      { title: 'Каталог товаров и услуг', price: '30 000' },
+      { title: 'Доработка сайта', price: '3 000' },
+    ],
+  },
+  {
+    id: 'android', number: '02', title: 'Android-приложения', platform: 'Android-приложение', startingPrice: '20 000',
+    description: 'Приложения для бизнеса, услуг и повседневных задач.',
+    items: [
+      { title: 'Небольшое приложение', price: '20 000' },
+      { title: 'Приложение средней сложности', price: '40 000' },
+      { title: 'Приложение с сервером / API', price: '60 000' },
+      { title: 'Доработка приложения', price: '5 000' },
+      { title: 'Исправление ошибок', price: '2 000' },
+    ],
+  },
 ]
