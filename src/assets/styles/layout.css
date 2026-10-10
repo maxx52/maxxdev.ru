@@ -1,0 +1,35 @@
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  min-height: 125px;
+}
+.site-footer .brand {
+  font-size: 23px;
+}
+.site-footer p {
+  font-size: 11px;
+  color: var(--muted);
+  margin: 0;
+}
+.back-top {
+  font-size: 11px;
+  display: flex;
+  gap: 26px;
+}
+.back-top > span {
+  color: var(--orange);
+  font-size: 17px;
+}
+.will-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.65s ease-out,
+    transform 0.65s ease-out;
+}
+.will-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}

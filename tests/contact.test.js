@@ -7,7 +7,7 @@ import { randomUUID } from 'node:crypto'
 import { createOutbox } from '../server/outbox.js'
 import { createContactApp } from '../server/app.js'
 import { createSenders } from '../server/delivery.js'
-import { postContact } from '../src/contact.js'
+import { postContact } from '../src/services/contactApi.js'
 
 const payload = { name: 'Иван', contact: 'ivan@example.com', platform: 'Сайт', goal: 'Разработка сайта' }
 async function fixture(t, senders, options) {

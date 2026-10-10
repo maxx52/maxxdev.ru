@@ -1,0 +1,51 @@
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  border-bottom: 1px solid var(--line);
+}
+.about h2 {
+  font-size: clamp(38px, 4.2vw, 57px);
+}
+.signature {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.7px;
+  margin-top: 50px;
+}
+.signature > span {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--muted);
+  margin-left: 13px;
+}
+.about-content {
+  padding-top: 44px;
+}
+.about-content p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.9;
+  margin-bottom: 23px;
+}
+.about-content p.about-lead {
+  font-size: 21px;
+  letter-spacing: -0.6px;
+  color: #d5d0c9;
+  line-height: 1.65;
+  margin-bottom: 28px;
+}
+.about-tools {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 30px 0;
+}
+.about-tools > span {
+  font-size: 12px;
+  border: 1px solid #45301f;
+  padding: 9px 13px;
+  color: #deaf8b;
+  background: #150e09;
+}

@@ -1,0 +1,93 @@
+.case-dialog {
+  padding: 35px;
+  border: 1px solid #734627;
+  background: #100d0b;
+  color: var(--paper);
+  width: min(660px, calc(100% - 32px));
+  max-height: calc(100dvh - 50px);
+  overflow-y: auto;
+  box-shadow: 0 40px 100px #0008;
+  overscroll-behavior: contain;
+}
+.case-dialog::backdrop {
+  background: #000b;
+  backdrop-filter: blur(7px);
+}
+.case-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 18px;
+}
+.case-top > .eyebrow {
+  margin: 0;
+}
+.dialog-close {
+  font-size: 28px;
+  line-height: 1;
+  background: transparent;
+  border: 1px solid #4f3522;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+}
+.dialog-close:hover {
+  background: #3b1b0b;
+}
+.case-dialog h2 {
+  font-size: 35px;
+  letter-spacing: -1.3px;
+  margin-bottom: 19px;
+  overflow-wrap: anywhere;
+}
+.case-dialog p {
+  font-size: 13px;
+  color: #b4a79d;
+  line-height: 1.9;
+}
+.case-description {
+  font-size: 15px !important;
+  color: #e0d3c7 !important;
+}
+.case-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 22px 0 32px;
+}
+.case-tags > span {
+  font-size: 11px;
+  border: 1px solid #56351f;
+  padding: 7px 10px;
+  color: #e8af83;
+}
+.case-dialog h3 {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 25px 0 12px;
+}
+.case-features {
+  padding-left: 18px;
+  font-size: 13px;
+  color: #b4a79d;
+  line-height: 2;
+  margin-bottom: 30px;
+}
+.case-features li::marker {
+  color: var(--orange);
+}
+.case-dialog .button {
+  font-size: 12px;
+  max-width: 100%;
+  gap: 12px;
+}
+.case-contact {
+  display: block;
+  background: none;
+  border: none;
+  color: var(--muted);
+  margin-top: 25px;
+  padding: 6px 0;
+  text-align: left;
+}

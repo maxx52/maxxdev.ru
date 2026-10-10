@@ -1,0 +1,572 @@
+@media (min-width: 1600px) {
+  .hero {
+    min-height: 790px;
+  }
+  .energy {
+    height: 540px;
+  }
+}
+@media (max-width: 1050px) {
+  .container {
+    width: calc(100% - 64px);
+  }
+  .desktop-nav {
+    gap: 24px;
+  }
+  .header-inner {
+    gap: 20px;
+  }
+  .hero {
+    min-height: 650px;
+    gap: 15px;
+  }
+  .energy {
+    height: 420px;
+  }
+  .energy-core {
+    inset: 65px 23px 35px;
+  }
+  h1 {
+    font-size: clamp(60px, 7.8vw, 82px);
+    letter-spacing: -4.5px;
+  }
+  .energy-ring {
+    inset: 65px -5px 25px;
+  }
+  .ring-two {
+    inset: 70px -5px 35px;
+  }
+  .ring-three {
+    inset: 60px 27px 40px;
+  }
+  .project-art {
+    height: 245px;
+  }
+  .key-grid {
+    bottom: 50px;
+    left: 16px;
+    right: 16px;
+    gap: 5px;
+  }
+  .key-grid span {
+    height: 25px;
+  }
+  .daric-mark {
+    width: 70px;
+    height: 70px;
+    font-size: 38px;
+    top: 24px;
+  }
+  .vinyl {
+    width: 159px;
+    height: 159px;
+    top: 25px;
+  }
+  .waveform {
+    bottom: 42px;
+    gap: 4px;
+  }
+  .projection-screen {
+    height: 130px;
+    margin-top: 33px;
+  }
+  .projection-stand {
+    top: 164px;
+    height: 35px;
+  }
+  .project-meta h3 {
+    font-size: 17px;
+  }
+  .about,
+  .contact-layout {
+    gap: 50px;
+  }
+  .services-grid {
+    gap: 24px;
+  }
+  .service-card h3 {
+    font-size: 33px;
+  }
+  .brief-form {
+    padding: 24px;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+@media (max-width: 780px) {
+  .container {
+    width: calc(100% - 44px);
+  }
+  .header-inner {
+    height: 83px;
+  }
+  .desktop-nav,
+  .header-cta {
+    display: none;
+  }
+  .brand {
+    font-size: 25px;
+  }
+  .menu-button {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 12px;
+    padding: 12px 0 12px 15px;
+    background: transparent;
+    border: none;
+  }
+  .menu-button > span {
+    font-size: 20px;
+    color: var(--orange);
+  }
+  .mobile-nav {
+    display: grid;
+    gap: 0;
+    padding: 8px 0 20px;
+    border-bottom: 1px solid var(--line);
+  }
+  .mobile-nav a {
+    padding: 15px 0;
+    font-size: 15px;
+    border-bottom: 1px solid #171513;
+  }
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    padding-top: 45px;
+  }
+  .hero-copy {
+    position: relative;
+    z-index: 1;
+  }
+  .hero .eyebrow {
+    font-size: 10px;
+    letter-spacing: 1.3px;
+  }
+  h1 {
+    font-size: clamp(59px, 11vw, 84px);
+    line-height: 1.02;
+    letter-spacing: -4px;
+    margin: 25px 0;
+  }
+  .hero-description {
+    font-size: 13px;
+    line-height: 1.85;
+    margin-bottom: 26px;
+  }
+  .hero-actions {
+    gap: 24px;
+  }
+  .hero-actions .button {
+    padding: 16px 19px;
+    font-size: 12px;
+    gap: 26px;
+  }
+  .energy {
+    height: 350px;
+    width: min(420px, 100%);
+    justify-self: center;
+    margin-top: 12px;
+  }
+  .energy-core {
+    inset: 35px 50px 12px;
+  }
+  .energy-ring {
+    inset: 30px 26px 15px;
+  }
+  .ring-two {
+    inset: 35px 25px 20px;
+  }
+  .ring-three {
+    inset: 40px 63px 25px;
+  }
+  .energy-label {
+    right: 0;
+    bottom: 3px;
+  }
+  .energy-coordinate {
+    top: 33px;
+    right: 11px;
+  }
+  .energy-cross {
+    top: 25px;
+    left: 27px;
+  }
+  .hero-bottom {
+    grid-column: 1;
+    padding: 26px 0 23px;
+    margin-top: 15px;
+    font-size: 10px;
+  }
+  .hero-bottom > a {
+    gap: 15px;
+  }
+  .section {
+    padding: 75px 0;
+  }
+  .section-heading {
+    align-items: start;
+    flex-direction: column;
+    gap: 22px;
+    margin-bottom: 35px;
+  }
+  .section-heading .eyebrow {
+    margin-bottom: 18px;
+  }
+  h2 {
+    font-size: clamp(36px, 6.5vw, 50px);
+    letter-spacing: -2px;
+    line-height: 1.16;
+  }
+  .section-intro {
+    font-size: 12px;
+  }
+  .portfolio-toolbar {
+    gap: 12px;
+    font-size: 11px;
+  }
+  .filters button {
+    padding: 9px 11px;
+    font-size: 11px;
+  }
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 33px;
+  }
+  .project-art {
+    height: 310px;
+  }
+  .daric-mark {
+    width: 85px;
+    height: 85px;
+    font-size: 48px;
+    top: 35px;
+  }
+  .key-grid {
+    left: 14%;
+    right: 14%;
+    bottom: 57px;
+    gap: 8px;
+  }
+  .key-grid span {
+    height: 34px;
+    font-size: 13px;
+  }
+  .vinyl {
+    width: 210px;
+    height: 210px;
+    top: 29px;
+  }
+  .vinyl-center {
+    width: 70px;
+    height: 70px;
+  }
+  .waveform {
+    left: 15%;
+    right: 15%;
+    bottom: 53px;
+    gap: 7px;
+  }
+  .projection-screen {
+    width: 70%;
+    height: 167px;
+    margin-top: 45px;
+  }
+  .projection-stand {
+    top: 214px;
+    height: 36px;
+  }
+  .projection-letter {
+    font-size: 58px;
+  }
+  .project-meta h3 {
+    font-size: 20px;
+  }
+  .project-meta p {
+    font-size: 12px;
+  }
+  .project-meta {
+    margin-top: 15px;
+  }
+  .portfolio-github {
+    font-size: 11px;
+    margin-top: 10px;
+  }
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .service-card {
+    padding: 24px 0;
+  }
+  .service-top {
+    margin-bottom: 25px;
+  }
+  .service-card h3 {
+    font-size: 36px;
+  }
+  .service-description {
+    max-width: 100%;
+    font-size: 13px;
+  }
+  .tech-list {
+    margin-bottom: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px 17px;
+  }
+  .about {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .about-title h2 br:last-of-type {
+    display: none;
+  }
+  .signature {
+    margin-top: 27px;
+    font-size: 20px;
+  }
+  .about-content {
+    padding-top: 35px;
+  }
+  .about-content p.about-lead {
+    font-size: 19px;
+  }
+  .process-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 25px;
+    margin: 38px 0;
+  }
+  .step-number {
+    margin-bottom: 18px;
+  }
+  .process-grid h3 {
+    font-size: 18px;
+  }
+  .process-grid p {
+    font-size: 12px;
+  }
+  .price-note {
+    align-items: start;
+    gap: 19px;
+    flex-wrap: wrap;
+  }
+  .price-note > span {
+    font-size: 27px;
+  }
+  .price-note p {
+    font-size: 12px;
+    max-width: calc(100% - 50px);
+  }
+  .price-note a {
+    margin-left: 44px;
+    font-size: 11px;
+  }
+  .contact-section {
+    padding: 75px 0;
+  }
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .contact-copy h2 {
+    font-size: 58px;
+    letter-spacing: -3px;
+  }
+  .contact-copy h2 br:last-of-type {
+    display: none;
+  }
+  .github-contact {
+    font-size: 12px;
+  }
+  .form-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+  .brief-form {
+    padding: 25px;
+  }
+  .brief-form input,
+  .brief-form textarea,
+  .brief-form select {
+    font-size: 16px;
+  }
+  .brief-form label {
+    font-size: 12px;
+  }
+  .form-note {
+    font-size: 11px;
+  }
+  .site-footer {
+    flex-wrap: wrap;
+    gap: 22px;
+    padding: 30px 0;
+    min-height: 0;
+  }
+  .site-footer .brand {
+    font-size: 23px;
+  }
+  .site-footer p {
+    order: 3;
+    width: 100%;
+    font-size: 11px;
+  }
+  .back-top {
+    margin-left: auto;
+  }
+  .case-dialog {
+    padding: 25px;
+  }
+  .case-dialog h2 {
+    font-size: 30px;
+  }
+}
+@media (max-width: 420px) {
+  .container {
+    width: calc(100% - 36px);
+  }
+  .hero .eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.8px;
+  }
+  h1 {
+    font-size: 60px;
+    letter-spacing: -3.5px;
+  }
+  .desktop-break {
+    display: none;
+  }
+  .hero-actions {
+    gap: 18px;
+  }
+  .hero-actions .button {
+    font-size: 11px;
+    gap: 18px;
+    padding: 15px 17px;
+  }
+  .hero-actions .text-link {
+    font-size: 11px;
+    gap: 10px;
+  }
+  .hero-bottom {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  .energy {
+    height: 290px;
+  }
+  .energy-core {
+    inset: 25px 36px 10px;
+  }
+  .energy-ring {
+    inset: 20px 10px 10px;
+  }
+  .ring-two {
+    inset: 30px 12px 15px;
+  }
+  .ring-three {
+    inset: 25px 46px 20px;
+  }
+  .energy-label {
+    font-size: 10px;
+  }
+  .energy-coordinate {
+    font-size: 9px;
+    right: 0;
+  }
+  .energy-cross {
+    left: 7px;
+  }
+  .portfolio-toolbar {
+    flex-wrap: wrap;
+  }
+  .portfolio-toolbar > span {
+    font-size: 11px;
+  }
+  .filters button {
+    padding: 8px 10px;
+  }
+  .project-art {
+    height: 280px;
+  }
+  .key-grid span {
+    height: 30px;
+    font-size: 11px;
+  }
+  .daric-mark {
+    top: 27px;
+    width: 78px;
+    height: 78px;
+    font-size: 43px;
+  }
+  .vinyl {
+    width: 183px;
+    height: 183px;
+  }
+  .waveform {
+    bottom: 47px;
+    gap: 5px;
+  }
+  .projection-screen {
+    height: 150px;
+    margin-top: 35px;
+  }
+  .projection-stand {
+    top: 187px;
+  }
+  .project-art-label {
+    font-size: 10px;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .brief-form {
+    padding: 20px;
+  }
+  .form-actions {
+    gap: 20px;
+  }
+  .form-actions .button {
+    font-size: 11px;
+    gap: 18px;
+    padding: 14px 15px;
+  }
+  .copy-button {
+    font-size: 11px;
+  }
+  .contact-copy h2 {
+    font-size: 53px;
+  }
+  .case-dialog h2 {
+    font-size: 27px;
+  }
+  .case-dialog .button {
+    font-size: 11px;
+    padding: 14px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *:before,
+  *:after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .will-reveal {
+    opacity: 1;
+    transform: none;
+  }
+  .energy-core {
+    transform: rotate(-20deg);
+  }
+  .energy-ring {
+    transition: none;
+  }
+}

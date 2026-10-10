@@ -1,0 +1,331 @@
+.portfolio-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  border-bottom: 1px solid var(--line);
+  padding: 0 0 20px;
+  margin-bottom: 25px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.filters {
+  display: flex;
+  gap: 4px;
+}
+.filters button {
+  background: none;
+  border: 1px solid transparent;
+  font-size: 12px;
+  padding: 9px 15px;
+  color: var(--muted);
+  transition:
+    color 0.2s,
+    border-color 0.2s;
+}
+.filters button:hover {
+  color: var(--paper);
+}
+.filters button.active {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  position: relative;
+}
+.project-card {
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+  min-width: 0;
+}
+.project-art {
+  height: 300px;
+  background: #141312;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #26211c;
+  transition: border-color 0.3s;
+}
+.project-card:hover .project-art {
+  border-color: #92502b;
+}
+.project-art:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 30%, #4a271242, transparent 65%);
+  z-index: -1;
+}
+.project-art-label {
+  position: absolute;
+  bottom: 18px;
+  left: 20px;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: #ae9f93;
+}
+.project-open {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  width: 34px;
+  height: 34px;
+  border: 1px solid #564337;
+  display: grid;
+  place-items: center;
+  font-size: 19px;
+  color: #bfa899;
+  transition:
+    color 0.25s,
+    background 0.25s;
+}
+.project-card:hover .project-open {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: #000;
+}
+.daric-mark {
+  position: absolute;
+  top: 30px;
+  font-size: 47px;
+  font-weight: 700;
+  width: 83px;
+  height: 83px;
+  display: grid;
+  place-items: center;
+  background: #f97820;
+  color: #17100a;
+  border-radius: 20px;
+  transform: rotate(-8deg);
+  box-shadow: 0 18px 35px #0007;
+  transition: transform 0.35s;
+}
+.daric-mark > span {
+  position: absolute;
+  right: -9px;
+  bottom: -8px;
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  background: #ffc199;
+  border-radius: 50%;
+  font-size: 20px;
+}
+.project-card:hover .daric-mark {
+  transform: translateY(-5px) rotate(-3deg);
+}
+.key-grid {
+  position: absolute;
+  bottom: 59px;
+  left: 25px;
+  right: 25px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 6px;
+  transform: perspective(500px) rotateX(13deg) rotate(-4deg);
+  transition: transform 0.35s;
+}
+.key-grid span {
+  height: 30px;
+  border: 1px solid #52402f;
+  border-radius: 4px;
+  background: #282018;
+  box-shadow: 0 3px 0 #100d09;
+  display: grid;
+  place-items: center;
+  font-size: 11px;
+  color: #deba9b;
+}
+.key-grid span:nth-child(4n) {
+  background: #8f461e;
+  color: #ffe7cf;
+  border-color: #af683f;
+}
+.project-card:hover .key-grid {
+  transform: perspective(500px) rotateX(6deg) rotate(-2deg);
+}
+.vinyl {
+  position: absolute;
+  top: 25px;
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  background: repeating-radial-gradient(
+    circle,
+    #171512 0 2px,
+    #2a231b 3px,
+    #15120f 4px
+  );
+  box-shadow: 0 12px 40px #000b;
+  border: 1px solid #514027;
+  display: grid;
+  place-items: center;
+  transition: transform 0.6s;
+}
+.vinyl-center {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--orange);
+  color: #0a0703;
+  font-size: 30px;
+  font-weight: 800;
+  box-shadow: 0 0 0 5px #382115;
+}
+.project-card:hover .vinyl {
+  transform: rotate(30deg);
+}
+.waveform {
+  position: absolute;
+  bottom: 55px;
+  left: 25px;
+  right: 25px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  filter: drop-shadow(0 4px 6px #000);
+}
+.waveform span {
+  max-height: 54px;
+  width: 5px;
+  background: #ff8539;
+  opacity: 0.85;
+}
+.waveform span:nth-child(3n) {
+  background: #9e4c1c;
+}
+.projection-screen {
+  position: relative;
+  align-self: start;
+  margin-top: 40px;
+  width: 78%;
+  height: 150px;
+  border: 3px solid #4b4035;
+  border-top: 7px solid #70604f;
+  background: linear-gradient(145deg, #2c1c13, #17110d);
+  box-shadow: 0 17px 35px #0009;
+  transform: perspective(500px) rotateY(-9deg) rotate(-3deg);
+  transition: transform 0.4s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.projection-letter {
+  font-size: 54px;
+  line-height: 1;
+  font-weight: 700;
+  color: #ffa367;
+  position: relative;
+}
+.projection-letter span {
+  position: absolute;
+  top: 12px;
+  left: -13px;
+  width: 8px;
+  height: 8px;
+  background: var(--orange);
+}
+.projection-line {
+  width: 90px;
+  height: 3px;
+  background: #7e4a2d;
+  margin-top: 10px;
+}
+.projection-line.short {
+  width: 57px;
+  margin-top: 6px;
+}
+.projection-stand {
+  position: absolute;
+  top: 191px;
+  width: 3px;
+  height: 43px;
+  background: #5f5044;
+}
+.projection-stand:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -22px;
+  width: 47px;
+  height: 2px;
+  background: #5f5044;
+}
+.projection-light {
+  position: absolute;
+  bottom: 45px;
+  width: 150px;
+  height: 100px;
+  background: linear-gradient(0deg, #ff802918, transparent);
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
+  z-index: -1;
+}
+.project-card:hover .projection-screen {
+  transform: perspective(500px) rotateY(-2deg) rotate(-1deg);
+}
+.project-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-top: 20px;
+  gap: 14px;
+  padding-bottom: 14px;
+}
+.project-meta h3 {
+  font-size: 19px;
+  letter-spacing: -0.7px;
+  font-weight: 600;
+  margin: 0 0 6px;
+  overflow-wrap: anywhere;
+}
+.project-meta p {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0;
+}
+.project-meta > span {
+  color: var(--orange);
+  font-size: 20px;
+}
+.portfolio-github {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 24px;
+  margin-top: 20px;
+  border-top: 1px solid var(--line);
+  font-size: 12px;
+  color: #b7b0a8;
+}
+.portfolio-github span {
+  color: var(--orange);
+}
+.project-enter-active,
+.project-leave-active,
+.project-move {
+  transition:
+    opacity 0.25s,
+    transform 0.25s;
+}
+.project-enter-from,
+.project-leave-to {
+  opacity: 0;
+  transform: translateY(12px);
+}
+.project-leave-active {
+  position: absolute;
+}

@@ -1,0 +1,215 @@
+.hero {
+  position: relative;
+  min-height: 730px;
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 0 30px;
+  align-items: center;
+  padding-top: 55px;
+}
+.eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1.65px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin: 0 0 20px;
+}
+.signal {
+  display: inline-block;
+  vertical-align: middle;
+  width: 6px;
+  height: 6px;
+  background: var(--orange);
+  margin-right: 10px;
+}
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+h1 {
+  font-size: clamp(66px, 7.8vw, 110px);
+  letter-spacing: -6px;
+  font-weight: 800;
+  line-height: 1.02;
+  margin: 28px 0 31px;
+}
+h1 > span,
+h2 span {
+  color: var(--orange);
+}
+.hero-description {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--muted);
+  margin-bottom: 35px;
+}
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.text-link {
+  font-size: 12px;
+  display: inline-flex;
+  gap: 15px;
+  align-items: center;
+  font-weight: 500;
+}
+.text-link span {
+  color: var(--orange);
+  font-size: 18px;
+  transition: transform 0.2s;
+}
+.text-link:hover span {
+  transform: translate(2px, -2px);
+}
+.energy {
+  height: 505px;
+  position: relative;
+  perspective: 1100px;
+  isolation: isolate;
+  --move-x: 0px;
+  --move-y: 0px;
+}
+.energy-core {
+  position: absolute;
+  inset: 67px 35px 35px;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at 74% 22%,
+    #ffe0b9 0,
+    #ffc276 4%,
+    #ff852d 9%,
+    #e14d0c 19%,
+    #602106 33%,
+    #160902 53%,
+    #080706 69%,
+    #000 84%
+  );
+  box-shadow:
+    26px -25px 55px #ff6b1a14,
+    inset -5px 6px 12px #ffaf6c55;
+  transform: translate(var(--move-x), var(--move-y)) rotate(-20deg);
+  transition: transform 0.45s ease-out;
+}
+.energy-core:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0.18;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' opacity='.45' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.energy-glow {
+  position: absolute;
+  inset: 2px -4px;
+  background: radial-gradient(ellipse at 65% 40%, #b0430d33, transparent 58%);
+  filter: blur(22px);
+}
+.energy-ring {
+  position: absolute;
+  inset: 60px -3px 28px;
+  border-radius: 50%;
+  border: 1px solid #91461d;
+  transform: translate(var(--move-x), var(--move-y)) rotate(-30deg) scaleY(0.55);
+  transition: transform 0.55s ease-out;
+  opacity: 0.75;
+}
+.ring-two {
+  inset: 65px -4px 37px;
+  transform: translate(var(--move-x), var(--move-y)) rotate(34deg) scaleY(0.51);
+  border-color: #64351d;
+}
+.ring-three {
+  inset: 50px 34px 40px;
+  transform: translate(var(--move-x), var(--move-y)) rotate(61deg) scaleX(0.6);
+  border-color: #522910;
+  opacity: 0.5;
+}
+.energy-cross {
+  position: absolute;
+  left: 26px;
+  top: 35px;
+  font: 26px monospace;
+  color: var(--orange);
+}
+.energy-label {
+  position: absolute;
+  bottom: 7px;
+  right: 0;
+  font-size: 11px;
+  line-height: 1.6;
+  letter-spacing: 1.6px;
+  color: var(--muted);
+  text-align: right;
+}
+.energy-label > span {
+  display: block;
+  margin-top: 15px;
+  margin-left: auto;
+  width: 30px;
+  height: 1px;
+  background: var(--orange);
+}
+.energy-coordinate {
+  position: absolute;
+  top: 40px;
+  right: 11px;
+  writing-mode: vertical-rl;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #817970;
+}
+.hero-bottom {
+  grid-column: span 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  padding: 34px 0 27px;
+  color: #9d9892;
+  font-size: 11px;
+  letter-spacing: 0.25px;
+  align-self: end;
+}
+.hero-bottom > a {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+.hero-bottom > a span {
+  font-size: 18px;
+  color: var(--orange);
+}
+.section {
+  padding-top: 110px;
+  padding-bottom: 110px;
+}
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 46px;
+}
+h2 {
+  font-size: clamp(38px, 4.6vw, 61px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -3px;
+  margin-bottom: 0;
+}
+.section-heading .eyebrow {
+  margin-bottom: 23px;
+}
+.section-intro {
+  font-size: 13px;
+  line-height: 1.9;
+  color: var(--muted);
+  margin: 0 0 5px;
+  max-width: 350px;
+}
