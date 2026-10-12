@@ -9,7 +9,7 @@ import { profile } from "../../data/profile.js";
       <h2>
         Один проект.<br /><span>Личная<br />ответственность.</span>
       </h2>
-      <div class="signature">Максим <span>/ разработчик</span></div>
+      <div class="signature">{{ profile.name }} <span>/ разработчик</span></div>
     </div>
     <div class="about-content">
       <p class="about-lead">
