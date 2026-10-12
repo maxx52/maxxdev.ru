@@ -319,11 +319,13 @@
     gap: 5px 17px;
   }
   .about {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 0;
   }
-  .about-title h2 br:last-of-type {
-    display: none;
+  .about h2 {
+    font-size: clamp(28px, 7.5vw, 40px);
+    letter-spacing: -1.2px;
+    line-height: 1.2;
   }
   .signature {
     margin-top: 27px;
@@ -369,15 +371,13 @@
     padding: 75px 0;
   }
   .contact-layout {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 40px;
   }
   .contact-copy h2 {
-    font-size: 58px;
-    letter-spacing: -3px;
-  }
-  .contact-copy h2 br:last-of-type {
-    display: none;
+    font-size: clamp(36px, 10vw, 58px);
+    letter-spacing: -1.5px;
+    line-height: 1.12;
   }
   .github-contact {
     font-size: 12px;
@@ -537,9 +537,6 @@
   }
   .copy-button {
     font-size: 11px;
-  }
-  .contact-copy h2 {
-    font-size: 53px;
   }
   .case-dialog h2 {
     font-size: 27px;

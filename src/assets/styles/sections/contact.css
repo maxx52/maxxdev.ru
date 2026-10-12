@@ -6,15 +6,19 @@
 }
 .contact-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 90px;
   align-items: start;
+}
+.contact-layout > * {
+  min-width: 0;
 }
 .contact-copy h2 {
   font-size: clamp(48px, 5.7vw, 75px);
   letter-spacing: -4px;
   line-height: 1.05;
   margin-bottom: 30px;
+  overflow-wrap: anywhere;
 }
 .contact-copy > p:not(.eyebrow) {
   font-size: 13px;
