@@ -5,7 +5,7 @@ import { projects } from "../../data/projects.js";
 import ProjectCard from "../portfolio/ProjectCard.vue";
 import ProjectDialog from "../portfolio/ProjectDialog.vue";
 const category = ref("Все");
-const categories = ["Все", "Android", "Desktop"];
+const categories = ["Все", "Web", "Android", "Desktop"];
 const visibleProjects = computed(() =>
   category.value === "Все"
     ? projects
@@ -25,8 +25,7 @@ function openProject(project) {
         <h2>Идеи, которые<br />стали <span>продуктами.</span></h2>
       </div>
       <p class="section-intro">
-        Мои проекты — от мобильных приложений<br />до инструментов для
-        компьютера.
+        Мои проекты — от сайтов и CMS<br />до мобильных и настольных приложений.
       </p>
     </div>
     <div class="portfolio-toolbar">

@@ -45,6 +45,9 @@ defineProps({ project: { type: Object, required: true } });
           :style="{ height: height + 'px' }"
         ></span></div
     ></template>
+    <template v-else-if="project.artwork === 'nova'">
+      <div class="nova-artwork"><strong>N<span>↗</span></strong><span>NOVA ENGINE</span><small>CONTENT / COMMERCE / CONTROL</small></div>
+    </template>
     <template v-else
       ><div class="projection-screen">
         <div class="projection-letter">H<span></span></div>
@@ -58,3 +61,12 @@ defineProps({ project: { type: Object, required: true } });
     ><span class="project-open">↗</span>
   </div>
 </template>
+
+<style scoped>
+.nova { background: radial-gradient(ellipse at 75% 25%, #ff6b1a33, transparent 65%), #111; }
+.nova-artwork { display: grid; gap: 12px; text-align: center; margin: auto; }
+.nova-artwork strong { font-size: 100px; line-height: 1; color: var(--orange); }
+.nova-artwork strong span { font-size: 40px; vertical-align: top; }
+.nova-artwork > span { font-weight: 800; letter-spacing: .18em; }
+.nova-artwork small { color: var(--muted); font-size: 9px; letter-spacing: .1em; }
+</style>

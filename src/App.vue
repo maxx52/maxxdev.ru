@@ -2,6 +2,7 @@
 import SiteHeader from "./components/layout/SiteHeader.vue";
 import SiteFooter from "./components/layout/SiteFooter.vue";
 import HeroSection from "./components/sections/HeroSection.vue";
+import NovaSection from "./components/sections/NovaSection.vue";
 import PortfolioSection from "./components/sections/PortfolioSection.vue";
 import ServicesSection from "./components/sections/ServicesSection.vue";
 import PricingSection from "./components/sections/PricingSection.vue";
@@ -21,6 +22,7 @@ useScrollReveal();
   <main id="main">
     <HeroSection />
     <PortfolioSection />
+    <NovaSection />
     <ServicesSection @select-platform="contact.selectPlatform" />
     <PricingSection @select-platform="contact.selectPlatform" />
     <AboutSection />
