@@ -4,7 +4,11 @@ defineProps({ project: { type: Object, required: true } });
 
 <template>
   <div class="project-art" :class="project.artwork" aria-hidden="true">
-    <template v-if="project.artwork === 'keyboard'"
+    <template v-if="project.artwork === 'pitstop'">
+      <img class="pitstop-artwork" src="/projects/pitstop.webp" loading="lazy" decoding="async" alt="" />
+      <strong class="pitstop-name">ПИТСТОП</strong>
+    </template>
+    <template v-else-if="project.artwork === 'keyboard'"
       ><div class="daric-mark">D<span>↗</span></div>
       <div class="key-grid">
         <span
@@ -63,6 +67,18 @@ defineProps({ project: { type: Object, required: true } });
 </template>
 
 <style scoped>
+.pitstop { background: #1b1a18; }
+.pitstop-artwork { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.pitstop-name {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 35px 20px 38px;
+  background: linear-gradient(transparent, #12110ff5);
+  color: #fff;
+  font-size: 27px;
+  letter-spacing: .06em;
+}
+
 .nova { background: radial-gradient(ellipse at 75% 25%, #ff6b1a33, transparent 65%), #111; }
 .nova-artwork { display: grid; gap: 12px; text-align: center; margin: auto; }
 .nova-artwork strong { font-size: 100px; line-height: 1; color: var(--orange); }

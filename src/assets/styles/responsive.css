@@ -23,21 +23,9 @@
   .energy {
     height: 420px;
   }
-  .energy-core {
-    inset: 65px 23px 35px;
-  }
   h1 {
     font-size: clamp(60px, 7.8vw, 82px);
     letter-spacing: -4.5px;
-  }
-  .energy-ring {
-    inset: 65px -5px 25px;
-  }
-  .ring-two {
-    inset: 70px -5px 35px;
-  }
-  .ring-three {
-    inset: 60px 27px 40px;
   }
   .project-art {
     height: 245px;
@@ -170,30 +158,6 @@
     width: min(420px, 100%);
     justify-self: center;
     margin-top: 12px;
-  }
-  .energy-core {
-    inset: 35px 50px 12px;
-  }
-  .energy-ring {
-    inset: 30px 26px 15px;
-  }
-  .ring-two {
-    inset: 35px 25px 20px;
-  }
-  .ring-three {
-    inset: 40px 63px 25px;
-  }
-  .energy-label {
-    right: 0;
-    bottom: 3px;
-  }
-  .energy-coordinate {
-    top: 33px;
-    right: 11px;
-  }
-  .energy-cross {
-    top: 25px;
-    left: 27px;
   }
   .hero-bottom {
     grid-column: 1;
@@ -458,28 +422,6 @@
   .energy {
     height: 290px;
   }
-  .energy-core {
-    inset: 25px 36px 10px;
-  }
-  .energy-ring {
-    inset: 20px 10px 10px;
-  }
-  .ring-two {
-    inset: 30px 12px 15px;
-  }
-  .ring-three {
-    inset: 25px 46px 20px;
-  }
-  .energy-label {
-    font-size: 10px;
-  }
-  .energy-coordinate {
-    font-size: 9px;
-    right: 0;
-  }
-  .energy-cross {
-    left: 7px;
-  }
   .portfolio-toolbar {
     flex-wrap: wrap;
   }
@@ -559,11 +501,5 @@
   .will-reveal {
     opacity: 1;
     transform: none;
-  }
-  .energy-core {
-    transform: rotate(-20deg);
-  }
-  .energy-ring {
-    transition: none;
   }
 }

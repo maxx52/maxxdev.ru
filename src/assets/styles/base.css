@@ -3,15 +3,15 @@
 :root {
   font-family: "Manrope", Arial, sans-serif;
   color: #f3f1ed;
-  background: #050505;
+  background: #10161b;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  --orange: #ff6b1a;
-  --ink: #050505;
+  --orange: #ff803a;
+  --ink: #10161b;
   --paper: #f3f1ed;
   --muted: #a19e99;
-  --line: #292827;
+  --line: #30383e;
   --container: 1240px;
   color-scheme: dark;
 }
@@ -85,7 +85,7 @@ textarea:focus-visible {
 .site-header {
   position: relative;
   z-index: 5;
-  background: #050505;
+  background: #10161b;
 }
 .header-inner {
   height: 106px;
@@ -98,20 +98,16 @@ textarea:focus-visible {
 .brand {
   display: inline-flex;
   align-items: center;
-  font-size: 28px;
-  letter-spacing: -1.4px;
+  gap: 10px;
+  font-size: 27px;
+  letter-spacing: -0.8px;
   font-weight: 800;
   white-space: nowrap;
 }
-.brand > span {
+.brand-mark {
+  display: block;
+  flex: none;
   color: var(--orange);
-}
-.brand i {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--orange);
-  margin-left: 15px;
 }
 .desktop-nav {
   display: flex;

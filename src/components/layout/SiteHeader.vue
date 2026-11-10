@@ -1,5 +1,7 @@
 <script setup>
 import { onMounted, onUnmounted, ref } from "vue";
+import BrandLink from "./BrandLink.vue";
+
 const menuOpen = ref(false);
 function closeMenu() {
   menuOpen.value = false;
@@ -14,13 +16,7 @@ onUnmounted(() => window.removeEventListener("keydown", handleKey));
 <template>
   <header class="site-header">
     <div class="container header-inner">
-      <a
-        href="#top"
-        class="brand"
-        aria-label="MaxxDev — на главную"
-        @click="closeMenu"
-        >maxx<span>dev</span><i aria-hidden="true"></i
-      ></a>
+      <BrandLink @click="closeMenu" />
       <nav class="desktop-nav" aria-label="Основная навигация">
         <a href="#projects">Проекты</a><a href="#services">Услуги</a
         ><a href="#pricing">Стоимость</a><a href="#about">О разработчике</a>
